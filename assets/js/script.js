@@ -4,6 +4,7 @@ import { auth} from "./firebase/firebase.js"
 import {loginCheck} from  './firebase/loginCheck.js';
 
 import './firebase/signup_form.js';
+import './firebase/signin_form.js'
 import './firebase/logout.js';
 
 
