@@ -15,7 +15,8 @@ signInForm.addEventListener('submit', async (e) => {
         console.log(userCredentials)
 
         const modal = bootstrap.Modal.getInstance(document.querySelector('signin-modal'));
-        modal.hide()
+        signInForm.reset();
+        modal.hide();
 
         show_message("Welcome" + userCredentials.user.email)
 
