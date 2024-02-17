@@ -2,7 +2,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"
 import { } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"
-import { getFirestore, collection, doc, addDoc, onSnapshot, deleteTask} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"
+import { getFirestore,
+    collection,
+    doc, 
+    addDoc,
+    getDoc,
+    updateDoc,
+    onSnapshot,
+    deleteDoc 
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
@@ -24,6 +32,10 @@ export const db = getFirestore();
 // funcion del CRUD
 
 export const createTask =  (title, description) =>  addDoc(collection(db, "tasks"), {title, description})
+
+export const getTask = id => getDoc(doc(db, "tasks", id));
+
+export const updateTack = (id, newFields) => updateDoc(doc(db, "tasks", id), newFields);
 
 export const onGetTask = (caliback) => onSnapshot(collection (db, "tasks"), caliback);
 
