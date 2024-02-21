@@ -20,4 +20,4 @@ googleButton.addEventListener('click', async () => {
  } catch (error) {
     console.log(error)
  }
-})
+});
